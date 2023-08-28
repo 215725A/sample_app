@@ -77,5 +77,6 @@ Rails.application.configure do
   pf_host = "#{ENV['CODESPACE_NAME']}-3000.#{pf_domain}"
   config.hosts << pf_host
 
+  config.action_mailer.default_url_options = { host: pf_host, protocol: 'https' }
   config.action_cable.allowed_request_origins = ["https://#{pf_host}"]
 end
