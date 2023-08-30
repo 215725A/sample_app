@@ -74,9 +74,10 @@ Rails.application.configure do
   # config.action_cable.disable_request_forgery_protection = true
 
   # Allow requests from our preview domain.
-  pf_host = "#{ENV['CODESPACE_NAME']}-3000.#{pf_domain}"
-  config.hosts << pf_host
+  # pf_host = "#{ENV['CODESPACE_NAME']}-3000.#{pf_domain}"
+  # config.hosts << pf_host
 
-  config.action_mailer.default_url_options = { host: pf_host, protocol: 'https' }
-  config.action_cable.allowed_request_origins = ["https://#{pf_host}"]
+  host = 'https://railstutorial-sample-app-hxph.onrender.com'
+  config.action_mailer.default_url_options = { host: host, protocol: 'https' }
+  # config.action_cable.allowed_request_origins = ["https://#{pf_host}"]
 end
