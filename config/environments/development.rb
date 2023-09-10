@@ -79,4 +79,7 @@ Rails.application.configure do
 
   config.action_mailer.default_url_options = { host: pf_host, protocol: 'https' }
   config.action_cable.allowed_request_origins = ["https://#{pf_host}"]
+
+  # デプロイ時に削除する
+  config.action_controller.default_protect_from_forgery = false
 end
